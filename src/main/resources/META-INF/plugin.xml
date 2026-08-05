@@ -1,5 +1,5 @@
 <idea-plugin>
-    <id>tech.zpkg.intellij</id>
+    <id>tech.zpkg</id>
     <name>Zed Package Insights</name>
     <vendor url="https://github.com/zed-pkg">zed-pkg</vendor>
 
