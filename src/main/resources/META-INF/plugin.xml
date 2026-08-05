@@ -1,0 +1,31 @@
+<idea-plugin>
+    <id>tech.zpkg.intellij</id>
+    <name>Zed Package Insights</name>
+    <vendor url="https://github.com/zed-pkg">zed-pkg</vendor>
+
+    <description><![CDATA[
+      <p>Workspace-wide Zed package state, diagnostics, and explicitly confirmed recommended resolutions.</p>
+      <p>The plugin discovers nested packages, validates manifests and lockfiles, checks CLI availability, and presents safe next actions without mutating the project during scans.</p>
+    ]]></description>
+
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <projectService serviceImplementation="tech.zpkg.intellij.service.ZedProjectService"/>
+        <toolWindow id="Zed Packages"
+                    anchor="right"
+                    canCloseContents="false"
+                    factoryClass="tech.zpkg.intellij.ui.ZedToolWindowFactory"/>
+        <postStartupActivity implementation="tech.zpkg.intellij.startup.ZedProjectActivity"/>
+        <notificationGroup id="Zed Package Insights" displayType="BALLOON" isLogByDefault="true"/>
+    </extensions>
+
+    <actions>
+        <action id="Zed.RefreshProjectState"
+                class="tech.zpkg.intellij.actions.RefreshZedStateAction"
+                text="Refresh Zed Package State"
+                description="Rescan Zed manifests, lockfiles, installed state, and CLI availability">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+        </action>
+    </actions>
+</idea-plugin>

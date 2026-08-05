@@ -1,0 +1,27 @@
+name: Bug report
+description: Report incorrect Zed state, a plugin failure, or unsafe behavior
+title: "[bug] "
+labels: [bug]
+body:
+  - type: textarea
+    attributes:
+      label: Observed behavior
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: IntelliJ IDEA version
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Zed CLI version
+  - type: textarea
+    attributes:
+      label: Sanitized manifest and diagnostic codes
+      description: Never include credentials or tokens.
