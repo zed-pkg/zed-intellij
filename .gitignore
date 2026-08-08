@@ -6,3 +6,7 @@ out/
 .DS_Store
 local.properties
 pluginVerifier/
+tmp
+temp
+tmp/worktrees
+temp/worktrees
